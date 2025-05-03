@@ -114,6 +114,10 @@ p{
     padding: 40px;
     padding-bottom: 5%;
 }
+.servicios h2{
+    font-size: 50px;
+    margin-top: 30px;
+}
 
 .elfsight-app-1f8f44ea-f1e7-48bd-832a-f76ff9bb707d {
     max-width: 100%;
@@ -142,6 +146,7 @@ p{
 
 .ubicacion i{
     padding-left: 1rem;
+    padding-right: 0.5rem;
 }
 
 .ubicacion div{
@@ -209,3 +214,100 @@ footer {
 
     }
 }
+/* --- GRID DE SERVICIOS --- */
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  /* --- COLUMNA IZQUIERDA: BOTONES --- */
+  .servicios-menu {
+    margin-top: 30px;
+    background-color:#9d6c4f;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: 12px;
+    gap: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  
+  .servicio-btn {
+    background-color:#9d6c4f;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .servicio-btn:hover {
+    background-color: #a55d3c;
+  }
+  
+  /* --- FLECHITA (DERECHA) --- */
+  .flecha {
+    font-size: 1.3rem;
+    margin-left: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .flecha.rotada {
+    transform: rotate(90deg);
+  }
+  
+  /* --- COLUMNA DERECHA: CONTENIDO --- */
+  .servicios-contenido {
+    flex: 2;
+    background-color: #64422E;
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* --- OCULTAR/MOSTRAR INFO --- */
+  .servicio-info {
+    display: none;
+  }
+  
+  .servicio-info.activo {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  /* --- TEXTO DE SERVICIOS --- */
+  .servicio-info p,
+  .servicio-info li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .servicio-info ul {
+    padding-left: 1rem;
+    list-style-type: disc;
+  }
+  
+  /* --- IMAGEN DE SERVICIO --- */
+  .servicio-img {
+    width: 45%;
+    max-width: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+  
+  /* --- TEXTO AL LADO DE LA IMAGEN --- */
+  .servicio-texto {
+    flex: 1;
+  }
+  
