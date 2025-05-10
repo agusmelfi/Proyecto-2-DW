@@ -21,3 +21,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./   # Asegurate que el index.html esté en la raíz
           server-dir: /public_html/   # Ruta en tu Hostinger
+          dangerous-clean-slate: true 
