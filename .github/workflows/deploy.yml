@@ -3,22 +3,22 @@ name: 🚀 Deploy to Hostinger
 on:
   push:
     branches:
-      - main  # o master según tu repo
+      - main
 
 jobs:
   ftp-deploy:
     name: 📂 Upload via FTP
     runs-on: ubuntu-latest
+
     steps:
       - name: ⬇️ Checkout
         uses: actions/checkout@v3
 
       - name: 📤 Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: sebastianpopp/ftp-action@v2.0.0
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./   # Asegurate que el index.html esté en la raíz
-          server-dir: /public_html/   # Ruta en tu Hostinger
-          dangerous-clean-slate: true 
+          localDir: ./
+          remoteDir: /public_html/
