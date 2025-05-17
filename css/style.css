@@ -128,12 +128,25 @@ p{
     padding-bottom: 2rem;
 }
 
-.botones {
+/*.botones {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content:center;
-    margin-right: 50%;
+    margin-right: 10%;
+    
+    margin-left: 10%;
+}*/
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content:flex-start;
+    margin-right: 20%;
+    
+    margin-left: 3%;
+    padding-bottom: 1rem;
 }
 
 .servicios {
@@ -369,6 +382,7 @@ footer {
   
   
 @media (max-width: 576px) {
+
   .logo {
     width: 100px;
     padding-top:15px;
