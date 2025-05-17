@@ -114,7 +114,8 @@ h1 {
 }
 
 p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    font-family: "Albert sans";
     font-size: large;
 }
 
@@ -136,7 +137,8 @@ p{
 
 .servicios {
     background-color:#64422E;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    
+    font-family: "Albert sans";   
     padding: 40px;
     padding-bottom: 5%;
 }
@@ -144,6 +146,16 @@ p{
     font-size: 50px;
     margin-top: 30px;
 }
+
+
+.lista-problemas{
+
+  line-height: 1.1; /* Ajustá este valor a gusto. 1.2 o incluso 1.1 si lo querés bien compacto */
+  margin-bottom: 0.3rem; /* Opcional: espaciado inferior más controlado */
+
+}
+
+
 
 .elfsight-app-1f8f44ea-f1e7-48bd-832a-f76ff9bb707d {
     max-width: 100%;
@@ -211,6 +223,23 @@ footer {
 }
 
 
+.galeria-general {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.galeria-general .servicio-img {
+  width: 250px;
+  height: auto;
+  margin-top: 2rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 /* --- GRID DE SERVICIOS --- */
 .servicios-grid {
     display: flex;
@@ -274,7 +303,10 @@ footer {
   
   /* --- OCULTAR/MOSTRAR INFO --- */
   .servicio-info {
+    width: 800px;
     display: none;
+      margin-left: 0.5rem;
+  margin-right: 0.5rem;
   }
   
   .servicio-info.activo {
@@ -295,13 +327,39 @@ footer {
     list-style-type: disc;
   }
   
-  /* --- IMAGEN DE SERVICIO --- */
+.servicios-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem; /* Espacio entre las imágenes */
+  flex-wrap: wrap; /* Para que se acomoden en móviles */
+  margin-bottom: 2rem;
+}
+
+.servicio-img {
+  width: 380px;
+  height: auto;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+.servicio-img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
   .servicio-img {
-    width: 45%;
-    max-width: 350px;
-    border-radius: 20px;
-    object-fit: cover;
+    width: 90%;
   }
+
+  .servicios-images {
+    justify-content: center;
+  }
+}
+
   
   /* --- TEXTO AL LADO DE LA IMAGEN --- */
   .servicio-texto {

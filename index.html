@@ -47,7 +47,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class=" col-sm-12 col-md-6">
-          <h1 class="fw-light text-light pt-5 mb-4">EDUCACIÓN PARA <strong class="fw-bold">CACHORROS</strong></h1>
+          <h1 class="fw-light text-light pt-5 mb-4">¿DE QUÉ SE TRATA EL <br><strong class="fw-bold">ADIESTRAMIENTO CANINO?</strong></h1>
           <p class="text-light">Desde nuestra perspectiva, el adiestramiento canino es la mejor herramienta en nuestras manos para poder entender el lenguaje de los perros. Buscamos, a través de él, ayudar  en su trayectoria a la máxima cantidad de binomios humano-perro, generando una convivencia sana y armoniosa. <br></br>
           Aquellos que tenemos perros, pasamos con ellos la mayor parte de nuestros días. Pero sin hablar su idioma, se torna dificil la convivencia.<br></br>No sólo trabajamos modificación de malas conductas, sino también prevención de problemas de comportamiento. Y no, ¡no hay edad para aprender!
           </p>
@@ -84,18 +84,29 @@
           <span class="flecha">&#8250;</span>
         </button>
         <button class="servicio-btn" data-target="conducta">
-          Problemas de conducta
+          Modificación de conducta
           <span class="flecha">&#8250;</span>
         </button>
         <button class="servicio-btn" data-target="modificacion">
-          Modificación de conducta
+          Educación del cachorro
           <span class="flecha">&#8250;</span>
         </button>
       </div>
   
       <div class="servicios-contenido">
+
+          <!-- GALERÍA POR DEFECTO -->
+          <div id="galeria-general" class="galeria-general">
+            <img src="images2/pata.jpeg" class="servicio-img" alt="Perro feliz">
+            <img src="images2/juego.jpeg" class="servicio-img" alt="Adiestramiento">
+            <img src="images2/fuss.jpeg" class="servicio-img" alt="Juego con la familia">
+          </div>
+
         <div class="fw-light servicio-info" id="obediencia">
-          <img src="images2/fotoGolden.webp" class="servicio-img" alt="Obediencia básica">
+          <div class="servicios-images">
+            <img src="images2/berna.jpeg" class="servicio-img" alt="Obediencia básica">
+            <img src="images2/fotoGolden.webp" class="servicio-img" alt="Obediencia básica">
+          </div>
           <p><strong class="fw-semibold">La obediencia básica se basa en enseñarle al perro un conjunto de comandos:</strong> Junto, Sentado, Echado, Quieto, Acudir al llamado, que el perro
             logre desempeñar sin importar el entorno que lo rodee (Perros, personas, ruidos, olores, etcétera). Se busca que el guía sea el estímulo más
             importante para el animal, construyendo así un vínculo estable, fuerte, con respeto y confianza mutua.</p>
@@ -104,9 +115,12 @@
         </div>
   
         <div class="fw-light servicio-info" id="conducta">
-          <img src="images2/fotoGolden.webp" class="servicio-img" alt="Problemas de conducta">
+          <div class="servicios-images">
+            <img src="images2/fotoGolden.webp" class="servicio-img" alt="Modificación de conducta">
+            <img src="images2/fotoGolden.webp" class="servicio-img" alt="Modificación de conducta">
+          </div>
           <p><strong class="fw-bold">Trabajamos todo tipo de problemas conductuales:</strong></p>
-          <ul>
+          <ul class="lista-problemas">
             <li><p><strong class="fw-semibold">Agresiones: </strong>a miembros de la familia, desconocidos, visitas, perros del grupo familiar, perros desconocidos, al pasear, otros seres vivos.</p></li>
             <li><p><strong class="fw-semibold">Miedos: </strong>a objetos, personas, perros, sonidos, y más.</p></li>
             <li><p>Ansiedad generalizada o específica.</p></li>
@@ -116,10 +130,12 @@
         </div>
   
         <div class="fw-light servicio-info" id="modificacion">
-          <img src="images2/fotoGolden.webp" class="servicio-img" alt="Modificación de conducta">
-          <p>La etapa más importante en la vida de un perro se da entre los dos y los cuatro meses. Desde el minuto que nuestro perro llega a casa, le estamos enseñando. Cada minuto que pasamos con él, está
-            siendo una sesión de entrenamiento. ¿Qué mejor que acompañar ese proceso con un especialista en comportamiento canino?</p>
-          <p>Todos los problemas mencionados en la sección anterior pueden ser prevenidos. También enseñamos adónde hacer sus necesidades, qué está permitido y qué no, moldeando conductas mediante el juego.</p>
+           <div class="servicios-images">
+            <img src="images2/fotoGolden.webp" class="servicio-img" alt="Educación del cachorro">
+            <img src="images2/fotoGolden.webp" class="servicio-img" alt="Educación del cachorro">
+          </div>
+          <p>La etapa más importante en la vida de un perro se da <strong class="fw-semibold">entre los dos y los cuatro meses.</strong> <br>Desde el primer segundo que nuestro perro llega a casa, le estamos enseñando. Cada minuto que pasamos con él, está
+            siendo una sesión de entrenamiento. ¿Qué mejor que acompañar ese proceso con un especialista en comportamiento canino? <br><strong class="fw-semibold">Todos los problemas de conducta</strong> mencionados en la sección anterior <strong class="fw-semibold">pueden ser prevenidos.</strong> También enseñamos adónde hacer sus necesidades, qué está permitido y qué no, moldeando conductas mediante el juego.</p>
         </div>
       </div>
     </div>
@@ -189,23 +205,35 @@
       AOS.init();
     </script>
 
-    <script>
-      const buttons = document.querySelectorAll(".servicio-btn");
-      const contenidos = document.querySelectorAll(".servicio-info");
-      const flechas = document.querySelectorAll(".flecha");
+<script>
+  const buttons = document.querySelectorAll(".servicio-btn");
+  const contenidos = document.querySelectorAll(".servicio-info");
+  const flechas = document.querySelectorAll(".flecha");
+  const galeria = document.getElementById("galeria-general"); // 👈 nuevo
 
-      buttons.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-          contenidos.forEach((content) => content.style.display = "none");
-          flechas.forEach((flecha) => flecha.innerHTML = "&#8250;");
-          
-          const target = btn.dataset.target;
-          document.getElementById(target).style.display = "block";
-          btn.querySelector(".flecha").innerHTML = "&#8249;";
-        });
-      });
-      // Mostrar por defecto el primero
-      if (contenidos[0]) contenidos[0].style.display = "block";
-    </script>
+  buttons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      // Oculta todas las secciones
+      contenidos.forEach((content) => content.style.display = "none");
+
+      // Oculta todas las flechas rotadas
+      flechas.forEach((flecha) => flecha.innerHTML = "&#8250;");
+
+      // Oculta la galería general
+      if (galeria) galeria.style.display = "none"; // 👈 nuevo
+
+      // Muestra la sección correspondiente
+      const target = btn.dataset.target;
+      document.getElementById(target).style.display = "block";
+
+      // Rota la flecha del botón activo
+      btn.querySelector(".flecha").innerHTML = "&#8249;";
+    });
+  });
+
+  // ❌ Quitamos esto para que no se muestre ninguna sección por defecto
+  // if (contenidos[0]) contenidos[0].style.display = "block";
+</script>
+
 </body>
 </html>
