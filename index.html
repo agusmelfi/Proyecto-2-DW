@@ -209,31 +209,37 @@
   const buttons = document.querySelectorAll(".servicio-btn");
   const contenidos = document.querySelectorAll(".servicio-info");
   const flechas = document.querySelectorAll(".flecha");
-  const galeria = document.getElementById("galeria-general"); // 👈 nuevo
+  const galeria = document.getElementById("galeria-general");
 
-  buttons.forEach((btn, index) => {
+  let activo = null; // 👉 guarda cuál sección está activa actualmente
+
+  buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      // Oculta todas las secciones
-      contenidos.forEach((content) => content.style.display = "none");
-
-      // Oculta todas las flechas rotadas
-      flechas.forEach((flecha) => flecha.innerHTML = "&#8250;");
-
-      // Oculta la galería general
-      if (galeria) galeria.style.display = "none"; // 👈 nuevo
-
-      // Muestra la sección correspondiente
       const target = btn.dataset.target;
-      document.getElementById(target).style.display = "block";
+      const contenido = document.getElementById(target);
+      const flecha = btn.querySelector(".flecha");
 
-      // Rota la flecha del botón activo
-      btn.querySelector(".flecha").innerHTML = "&#8249;";
+      // Si ya estaba activo, lo cerramos y volvemos a la galería
+      if (activo === target) {
+        contenido.style.display = "none";
+        if (galeria) galeria.style.display = "flex";
+        flechas.forEach(f => f.innerHTML = "&#8250;");
+        activo = null;
+        return;
+      }
+
+      // Si es uno nuevo, mostrarlo y ocultar lo anterior
+      contenidos.forEach((content) => content.style.display = "none");
+      flechas.forEach((f) => f.innerHTML = "&#8250;");
+      if (galeria) galeria.style.display = "none";
+
+      contenido.style.display = "block";
+      flecha.innerHTML = "&#8249;";
+      activo = target;
     });
   });
-
-  // ❌ Quitamos esto para que no se muestre ninguna sección por defecto
-  // if (contenidos[0]) contenidos[0].style.display = "block";
 </script>
+
 
 </body>
 </html>
