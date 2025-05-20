@@ -75,7 +75,7 @@ body{
 
 .educacionCachorros {
   background: linear-gradient(rgba(60, 30, 10, 0.8), rgba(60, 30, 10, 0.8)), 
-              url('../images2/fotoGolden.webp') no-repeat center center;
+              url('../images2/petPark.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }
