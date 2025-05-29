@@ -1,4 +1,4 @@
-body{
+html,body{
     overflow-x: hidden;
     font-family: "Albert sans";
 }
@@ -385,6 +385,11 @@ gap: 0;
   .servicios-images {
     justify-content: center;
   }
+ 
+  .educacionCachorros {
+    background-attachment: scroll;
+
+}
 }
 
   
